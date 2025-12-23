@@ -1,0 +1,201 @@
+:root{
+  --bg:#f5f5f7;
+  --card: rgba(255,255,255,.78);
+  --cardSolid:#ffffff;
+  --text:#0b0b0c;
+  --muted:#6b7280;
+  --line: rgba(0,0,0,.10);
+  --shadow2: 0 10px 30px rgba(0,0,0,.06);
+  --r2: 24px;
+  --max: 1080px;
+  --blue:#0a84ff;
+  --blue2:#0077ed;
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+
+body{
+  margin:0;
+  color:var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "SF Pro Display", "SF Pro Text", Segoe UI, Roboto, Helvetica, Arial;
+  background:
+    radial-gradient(1000px 600px at 15% -10%, rgba(10,132,255,.18) 0%, rgba(10,132,255,0) 60%),
+    radial-gradient(900px 600px at 90% 0%, rgba(88,86,214,.14) 0%, rgba(88,86,214,0) 55%),
+    var(--bg);
+}
+
+a{ color:inherit; text-decoration:none; }
+button,input,textarea{ font:inherit; }
+
+.container{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 28px 20px;
+}
+
+.nav{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(245,245,247,.70);
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+.navInner{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 16px 20px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.pill{
+  font-size: 12px;
+  color: var(--muted);
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(255,255,255,.55);
+}
+
+.card{
+  border-radius: var(--r2);
+  border: 1px solid rgba(0,0,0,.10);
+  background: var(--card);
+  box-shadow: var(--shadow2);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.cardSolid{
+  border-radius: var(--r2);
+  border: 1px solid rgba(0,0,0,.10);
+  background: var(--cardSolid);
+  box-shadow: var(--shadow2);
+}
+
+.h1{
+  margin: 0;
+  font-size: 40px;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.h2{
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+.p{
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.55;
+  max-width: 62ch;
+}
+
+.row{
+  display:flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.grid2{
+  display:grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 18px;
+}
+@media (max-width: 920px){
+  .grid2{ grid-template-columns: 1fr; }
+}
+
+.label{
+  display:block;
+  margin: 14px 0 6px;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: -0.01em;
+  color: rgba(0,0,0,.72);
+}
+
+.input, .textarea{
+  width:100%;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.12);
+  background: rgba(255,255,255,.78);
+  outline: none;
+  transition: box-shadow .15s ease, border-color .15s ease, transform .08s ease;
+}
+.textarea{ min-height: 140px; resize: vertical; }
+
+.input:focus, .textarea:focus{
+  border-color: rgba(10,132,255,.55);
+  box-shadow: 0 0 0 5px rgba(10,132,255,.18);
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.12);
+  background: rgba(255,255,255,.78);
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+  font-weight: 850;
+  letter-spacing: -0.01em;
+  cursor:pointer;
+  transition: transform .08s ease, box-shadow .15s ease, background .15s ease;
+}
+.btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 14px 34px rgba(0,0,0,.08);
+}
+
+.btnPrimary{
+  border-color: rgba(0,0,0,0);
+  background: linear-gradient(180deg, var(--blue) 0%, var(--blue2) 100%);
+  color: #fff;
+}
+.btnGhost{
+  background: rgba(255,255,255,.55);
+}
+.btnDanger{
+  background: rgba(255,59,48,.10);
+  border-color: rgba(255,59,48,.25);
+  color: #b42318;
+}
+
+.small{ font-size: 12px; color: var(--muted); }
+
+.hr{
+  height:1px;
+  background: rgba(0,0,0,.08);
+  border:0;
+  margin: 14px 0;
+}
+
+.kbd{
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(255,255,255,.6);
+  color: rgba(0,0,0,.7);
+}
